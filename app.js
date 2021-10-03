@@ -10,7 +10,7 @@ function makeRows(rows, cols) {
   }
 }
 
-makeRows(16, 16);
+makeRows(12, 12);
 
 // This handler will be executed only once when the cursor
 // moves over the unordered list
