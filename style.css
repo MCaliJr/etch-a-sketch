@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 90%;
+  width: 90%;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu {
+  min-width: 20vw;
+  max-width: 30vw;
+  height: 50%;
+  border: 2px solid black;
+  margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px;
+}
+
+.menu div {
+  margin: 20px;
+}
+
+button {
+  margin: 10px;
+  font-size: 28px;
+  padding: 25px;
+}
+
+#square {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-width: 45%;
+  border: 2px solid black;
+  margin: 100px;
+}
+#square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#sketchArea {
+  flex: 1 0 0%;
+  display: grid;
+  grid-gap: 0;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  min-height: 400px;
+  min-width: 400px;
+  border: rgb(81, 81, 81) 2px solid;
+}
+
+.grid-item {
+  height: auto;
+  width: auto;
+  padding: auto;
+  border: 1px solid #ddd;
+}
