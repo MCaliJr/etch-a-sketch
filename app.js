@@ -104,12 +104,15 @@ function draw(gridColor) {
 // Draw random color in each cell we hover over
 function drawRandom() {
   gridArray.forEach((grid) => {
-    let color = Math.floor(Math.random() * 16777215).toString(16);
     grid.addEventListener("mouseenter", (event) => {
-      event.target.style.backgroundColor = `#${color}`;
+      event.target.style.backgroundColor = `#${randomColor()}`;
     });
     false;
   });
+}
+
+function randomColor() {
+  return Math.floor(Math.random() * 16777215).toString(16);
 }
 
 // Draw random pastel color in each cell we hover over
@@ -117,14 +120,14 @@ function drawRandomPastel() {
   gridArray.forEach((grid) => {
     let color = Math.floor(Math.random() * 16777215).toString(16);
     grid.addEventListener("mouseenter", (event) => {
-      event.target.style.backgroundColor = `${getColor()}`;
+      event.target.style.backgroundColor = `${getRandomPastelColor()}`;
     });
     false;
   });
 }
 
 // Get random pastel color
-function getColor() {
+function getRandomPastelColor() {
   return (
     "hsl(" +
     360 * Math.random() +

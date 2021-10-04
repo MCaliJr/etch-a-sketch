@@ -5,34 +5,107 @@
 }
 
 body {
-  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to right top, rgb(214, 74, 74), rgb(161, 45, 45));
+}
+
+h1 {
+  font-size: 3vw;
+  font-weight: 600;
+  color: rgb(121, 30, 30);
+  opacity: 0.8;
+  text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 1.5vw;
+  color: rgb(121, 30, 30);
+  font-weight: 600;
+  opacity: 0.8;
+  text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-  height: 90%;
+  min-height: 80vh;
   width: 90%;
-  border: 1px solid blue;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 1vw;
+  margin: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.329)
+  );
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2rem);
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+.title {
+  min-height: 80vh;
+  width: 90%;
+  flex-wrap: wrap;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.circle2 {
+  top: 1vh;
+  right: 1vh;
+  height: 12vw;
+  width: 12vw;
+}
+.circle1 {
+  bottom: 1vh;
+  left: 1vh;
+  height: 10vw;
+  width: 10vw;
 }
 
 .menu {
-  min-width: 20vw;
-  max-width: 30vw;
+  min-width: 15vw;
+  max-width: 20vw;
   height: 50%;
-  border: 2px solid black;
   margin-right: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
   padding: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
 }
 
 .menu div {
@@ -40,9 +113,20 @@ body {
 }
 
 button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   margin: 10px;
-  font-size: 28px;
-  padding: 25px;
+  font-size: 1.2vw;
+  padding: 1vw;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.2)
+  );
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 #square {
@@ -65,6 +149,7 @@ button {
 }
 
 #sketchArea {
+  background: white;
   flex: 1 0 0%;
   display: grid;
   grid-gap: 0;
@@ -73,15 +158,24 @@ button {
   min-height: 400px;
   min-width: 400px;
   border: rgb(81, 81, 81) 2px solid;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .grid-item {
   height: auto;
   width: auto;
   padding: auto;
-  border: 0.1px solid rgba(221, 221, 221, 0.411);
+  border: 1px solid rgba(221, 221, 221, 0.411);
+}
+
+.grid-item:hover {
+  border: 2px solid rgba(119, 119, 119, 0.411);
 }
 
 .gridBorder {
+  border: none;
+}
+
+.gridBorder:hover {
   border: none;
 }
