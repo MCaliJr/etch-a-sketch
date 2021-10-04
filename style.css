@@ -79,5 +79,9 @@ button {
   height: auto;
   width: auto;
   padding: auto;
-  border: 1px solid #ddd;
+  border: 0.1px solid rgba(221, 221, 221, 0.411);
+}
+
+.gridBorder {
+  border: none;
 }
