@@ -143,6 +143,13 @@ button:hover {
   transform: translateY(-4px);
 }
 
+.toggled {
+  background: linear-gradient(to right top, rgb(214, 74, 74), rgb(179, 65, 65));
+  box-shadow: 0px 15px 20px rgba(161, 45, 45, 0.4);
+  color: #fff;
+  transform: translateY(0px);
+}
+
 #square {
   display: flex;
   justify-content: center;
@@ -193,4 +200,58 @@ button:hover {
 
 .gridBorder:hover {
   border: none;
+}
+
+.breathing {
+  -webkit-animation: breathing 1s ease-out infinite normal;
+  animation: breathing 10s ease-out infinite normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
 }

@@ -9,37 +9,47 @@ let gridArray = Array.prototype.slice.call(sketchGrid);
 let userRows = 16;
 
 // Choose buttons from menu
-const black = document.querySelector(".black");
-const random = document.querySelector(".random");
-const rainbow = document.querySelector(".rainbow");
-const pastel = document.querySelector(".pastel");
-const eraser = document.querySelector(".eraser");
-const gridOnOff = document.querySelector(".gridOnOff");
-const reset = document.querySelector(".reset");
-const gridSize = document.querySelector(".gridSize");
+const black = document.querySelector("#black");
+const random = document.querySelector("#random");
+const rainbow = document.querySelector("#rainbow");
+const pastel = document.querySelector("#pastel");
+const eraser = document.querySelector("#eraser");
+const gridOnOff = document.querySelector("#gridOnOff");
+const reset = document.querySelector("#reset");
+const gridSize = document.querySelector("#gridSize");
 
 // Add certain effect to buttons using functions
 black.addEventListener("click", () => {
+  unCheck();
+  checked(black);
   draw("black");
 });
 
 // Randomly chosen color
 random.addEventListener("click", () => {
+  unCheck();
+  checked(random);
   draw(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
 });
 
 // Randomly chosen color (different on each grid part)
 rainbow.addEventListener("click", () => {
+  unCheck();
+  checked(rainbow);
   drawRandom();
 });
 
 // Randomly chosen pastel color
 pastel.addEventListener("click", () => {
+  unCheck();
+  checked(pastel);
   drawRandomPastel();
 });
 
 // Delete background from grid
 eraser.addEventListener("click", () => {
+  unCheck();
+  checked(eraser);
   draw("");
 });
 
@@ -52,11 +62,10 @@ gridOnOff.addEventListener("click", () => {
 
 // Reset current drawing
 reset.addEventListener("click", () => {
+  unCheck();
+  checked(black);
   makeRows(userRows, userRows);
 });
-
-// Create starting grid
-makeRows(userRows, userRows);
 
 // Ask user for size of grid (smaller than 100x100) and draw it
 gridSize.addEventListener("click", () => {
@@ -66,11 +75,32 @@ gridSize.addEventListener("click", () => {
   if (userRows == null) {
     return;
   } else if (userRows <= 100) {
+    unCheck();
+    checked(black);
     makeRows(userRows, userRows);
   } else {
     alert("Hey... I asked for a number that's lesser than 100");
   }
 });
+
+// Create starting grid
+makeRows(userRows, userRows);
+
+// Delete all buttons check
+function unCheck() {
+  let buttons = document.getElementsByTagName("button");
+  let buttonsArray = Array.prototype.slice.call(buttons);
+
+  buttonsArray.forEach((button) => {
+    button.classList.remove("toggled");
+  });
+}
+
+// Check buttons on click
+function checked(buttonId) {
+  thisButton = document.getElementById(buttonId);
+  buttonId.classList.add("toggled");
+}
 
 // Draw grid of specified size
 function makeRows(rows, cols) {
