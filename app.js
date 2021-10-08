@@ -121,11 +121,21 @@ function makeRows(rows, cols) {
   draw("black");
 }
 
+let mouseDown = 0;
+document.body.onmousedown = function () {
+  ++mouseDown;
+};
+document.body.onmouseup = function () {
+  mouseDown = 0;
+};
+
 // Draw specified color in cell we hover over
 function draw(gridColor) {
   gridArray.forEach((grid) => {
     grid.addEventListener("mouseenter", (event) => {
-      event.target.style.backgroundColor = gridColor;
+      if (mouseDown) {
+        event.target.style.backgroundColor = gridColor;
+      }
     });
     false;
   });
@@ -135,7 +145,9 @@ function draw(gridColor) {
 function drawRandom() {
   gridArray.forEach((grid) => {
     grid.addEventListener("mouseenter", (event) => {
-      event.target.style.backgroundColor = `#${randomColor()}`;
+      if (mouseDown) {
+        event.target.style.backgroundColor = `#${randomColor()}`;
+      }
     });
     false;
   });
@@ -150,7 +162,9 @@ function drawRandomPastel() {
   gridArray.forEach((grid) => {
     let color = Math.floor(Math.random() * 16777215).toString(16);
     grid.addEventListener("mouseenter", (event) => {
-      event.target.style.backgroundColor = `${getRandomPastelColor()}`;
+      if (mouseDown) {
+        event.target.style.backgroundColor = `${getRandomPastelColor()}`;
+      }
     });
     false;
   });

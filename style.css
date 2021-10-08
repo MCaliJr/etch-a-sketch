@@ -188,6 +188,12 @@ button:hover {
   width: auto;
   padding: auto;
   border: 1px solid rgba(221, 221, 221, 0.411);
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .grid-item:hover {
