@@ -121,7 +121,7 @@ function makeRows(rows, cols) {
   draw("black");
 }
 
-// Listen to mouse clicked or unclicked
+// Listen to mouse clicked or unclicked to draw only when mouse is clicked later
 let mouseDown = 0;
 document.body.onmousedown = function () {
   ++mouseDown;
